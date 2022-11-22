@@ -1,5 +1,5 @@
 import Order from './order'
-import OrderItem from './orderItem'
+import OrderItem from './order_item'
 
 describe('Order unit test', () => {
   it('should throw error when id is empty', () => {
@@ -21,11 +21,23 @@ describe('Order unit test', () => {
   })
 
   it('should calculate total', () => {
-    const item = new OrderItem('1', 'item a', 12)
-    const item2 = new OrderItem('2', 'item b', 25.69)
-    const order = new Order('1', 'any_order', [item, item2])
+    const item = new OrderItem('1', 'item a', 100, 1, 'p1')
+    const item2 = new OrderItem('2', 'item b', 200, 2, 'p2')
+    const order = new Order('o1', 'c1', [item])
     const total = order.total()
 
-    expect(total).toBe(37.69)
+    expect(total).toBe(100)
+
+    const order2 = new Order('o1', 'c1', [item, item2])
+    const total2 = order2.total()
+
+    expect(total2).toBe(500)
+  })
+
+  it('should throw error if the item qte os greater than 0', () => {
+    expect(() => {
+      const item = new OrderItem('1', 'item a', 100, 0, 'p1')
+      new Order('o1', 'c1', [item])
+    }).toThrowError('Quantity must be greater than 0')
   })
 })

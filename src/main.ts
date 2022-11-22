@@ -1,7 +1,7 @@
 import Address from './entity/address'
 import Customer from './entity/customer'
 import Order from './entity/order'
-import OrderItem from './entity/orderItem'
+import OrderItem from './entity/order_item'
 
 const customer = new Customer('123', 'edfcsx')
 const address = new Address('Rua dois', '2A', '50800600', 'Recife')
