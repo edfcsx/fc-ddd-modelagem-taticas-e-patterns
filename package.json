@@ -25,8 +25,9 @@
   "scripts": {
     "clear-build": "rimraf ./dist",
     "build:watch": "npm run clear-build && tsc --watch",
-    "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test": "npm run tsc-check && jest",
+    "test:watch": "npm run tsc-check && jest --watchAll",
+    "tsc-check": "node_modules/.bin/tsc --noEmit"
   },
   "keywords": [],
   "author": "",
