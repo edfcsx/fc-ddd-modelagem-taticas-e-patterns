@@ -53,3 +53,22 @@ Evans, Eric. Domain Driven Design (p.126). Pearson Education. Kindle Edition.
 ![Alt text](./imgs/aggregates.png?raw=true "Aggregates")
 
 
+## Domain Services
+"Um serviço de domínio é uma operação sem estado que cumpre uma tarefa específica de domínio. Muitas vezes, a melhor indicação de que você deve criar um Serviço no modelo de domínio é quando a operação que você precisa executar pareça não se encaixar como um método em um Agregado ou um Objeto de valor."
+
+Vernon, Vaughn. Implementing Domain-Driven Design. Pearson Education. Kindle Edition.
+
+"Quando um processo ou transformação significativa no domínio não for uma responsabilidade natural de uma ENTIDADE ou OBJETO DE VALOR, adicione uma operação ao modelo como uma interface autônoma declarada como um SERVIÇO. Defina a interface baseada na linguagem do modelo de domínio e certifique-se de que o nome da operação faça parte do UBIQUITOUS LANGUAGE. Torne o serviço sem estado".
+
+Evans, Eric. Domain-Driven Design (p.106). Pearson Education. Kindle Edition
+
+Estamos falando de uma entidade stateless sem estado, que está relacionada as entidades de negócio e não por exemplo a um serviço de envio de e-mail.
+
+Perguntas:
+  - uma entidade pode realizar uma ação que vai afetar todas as entidades?
+  - como realizar uma operação em lote?
+  - como calcular algo cuja as informações constam em mais de uma entidade?
+
+Cuidados:
+  - Quando houver muitos Domain Services em seu projeto, Talvez isso pode indicar que seus agregados estão anêmicos.
+  - Domain Services são Stateless.
