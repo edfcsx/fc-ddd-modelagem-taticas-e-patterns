@@ -26,9 +26,17 @@ export default class Customer {
     return this._rewardPoints
   }
 
+  get Address (): Address {
+    return this._address
+  }
+
   changeName (name: string) {
     this._name = name
     this.validate()
+  }
+
+  changeAddress (address: Address) {
+    this._address = address
   }
 
   validate () {
@@ -55,11 +63,6 @@ export default class Customer {
 
   deactive () {
     this._active = false
-  }
-
-  // eslint-disable-next-line accessor-pairs
-  set Address (address: Address) {
-    this._address = address
   }
 
   addRewardPoints (points: number): void {
