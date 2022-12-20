@@ -29,7 +29,15 @@ export default class OrderItem {
     return this._quantity
   }
 
+  public get productId (): string {
+    return this._productId
+  }
+
   public orderItemTotal (): number {
     return this._price * this._quantity
+  }
+
+  public changeQuantity (quantity: number): void {
+    this._quantity = quantity
   }
 }
