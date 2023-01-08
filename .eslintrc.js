@@ -18,6 +18,7 @@ module.exports = {
   rules: {
     indent: 'off',
     'no-tabs': 'off',
-    'no-new': 'off'
+    'no-new': 'off',
+    'dot-notation': 'off'
   }
 }

@@ -82,3 +82,36 @@ Vernon, Vaughn. Implementing Domain-Driven Design. Pearson Eduacation. Kindle Ed
 Esses objetos semelhantes a coleções são sobre persistência. Todo tipo Agregado persistente terá um Repositório. De um modo geral, existe uma relação um-para-um entre um tipo Agregado e um Repositório.
 
 Vernon, Vaughn. Implementing Domain-Driven Design. Pearson Eduacation. Kindle Edition.
+
+## Domain Events
+"Use um evento de domínio para capturar uma ocorrência de algo que aconteceu no domínio.""
+
+Vernon, Vaughn. Implementing Domain-Driven Design. Pearson Education. Kindle Edition.
+
+"A essência de um evento de domínio é que você o usa para capturar coisas que podem desencadear uma mudança no estado do aplicativo que você está desenvolvendo. Esses objetos de evento são processados para causar alterações no sistema e armazenados para fornecer um AuditLog."
+
+Fowler, Margin. Domain Event.
+
+Todo evento deve ser representado em uma ação realizada no passado:
+- UserCreated
+- OrderPlaced
+- EmailSent
+
+### Quando utilizar?
+Normalmente um Domain Event deve ser utilizado quando queremos notificar outros Bounded Contexts de uma mudança de estado.
+
+### Componentes
+- Event
+- Handler: Executa o processamento quando um evento é chamado.
+- Event Dispatcher: Responsável por armazenar e executar os handlers de um evento quando ele for disparado.
+
+### Dinâmica
+<ol>
+  <li>Criar um "Event Dispatcher"</li>
+  <li>Criar um "Evento"</li>
+  <li>Criar um Handler para o "Evento"</li>
+  <li>Registrar o Evento, juntamento com o Handler no "event Dispatcher"</li>
+</ol>
+
+Agora para disparar um evento, basta executar o método "notify" do "event Dispatcher". Nesse momento todos os handlers registrados no evento serão executados.
+
