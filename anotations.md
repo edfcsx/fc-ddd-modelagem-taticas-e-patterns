@@ -115,3 +115,20 @@ Normalmente um Domain Event deve ser utilizado quando queremos notificar outros 
 
 Agora para disparar um evento, basta executar o método "notify" do "event Dispatcher". Nesse momento todos os handlers registrados no evento serão executados.
 
+## Módulos
+
+Em um contexto DDD, Módulos em seu modelo servem como contêiners nomeados para classes de objetos de domínio que são altamente coesas entre si. O Objetivo deve ser baixo acoplamento entre as classes que estão em módulos diferentes. Como os módulos usados no DDD não são compartimentos de armazenamento anêmicos ou genéricos, também é importante nomear adequadamente os Módulos.
+
+Vernon, Vaughn. Implementando Design Orientado a Dominio. Pearson Education. Kindle Edition.
+
+- Respeitar a linguagem universal
+- Baixo acoplamento
+- Um ou mais agregados devem estar juntos somente se fazem sentido
+- Organizado pelo domínio / subdomínio e não pelo tipo de objetos
+- Devem respeitar a mesma divisão quando estão em camadas diferentes
+
+## Factories
+
+Desloque a necessidade de criar instâncias de objetos complexos e AGREGADOS, para um objeto separado, que pode não ter responsabilidade no modelo de domínio, mas ainda não faz parte do design do domínio. Forneça uma interface que encapsule toda a criação complexa e que não exija que o cliente faça referência às classes concretas dos objetos que estão sendo instanciados. Crie AGGREGATES inteiros de uma única vez, reforçando suas invariantes.
+
+Evans, Eric. Domain Driven Design (p.138). Pearson Education Kindle Edition.
